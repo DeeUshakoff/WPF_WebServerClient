@@ -24,6 +24,7 @@
                 <Ellipse x:Name="ServerStatus_Icon" Stroke="Black" Fill="Red" Width="15" Height="15"/>
                 <TextBlock x:Name="ServerStatus_Label" Text="Status" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 <TextBlock x:Name="ServerStatusTimer_Label" Text="" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                <TextBlock x:Name="DebugText" Text="" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 
             </StackPanel>
 

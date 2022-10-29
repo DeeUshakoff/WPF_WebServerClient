@@ -28,7 +28,7 @@ namespace WPF_WebServerClient.ServerBackend
 
             return buffer;
         }
-
+        
 
     }
 }

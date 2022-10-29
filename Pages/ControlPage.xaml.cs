@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,7 @@ namespace WPF_WebServerClient.Pages
 
             server.Initialize();
             server.ServerSetting.Initialize();
+            SiteDirectory_TextBox.Text = Directory.Exists(@"C:\\Users\\DeeUsh\\Source\\Repos\\DeeUshakoff\\WPF_WebServerClient\\bin\\Debug\\net6.0-windows\\Site").ToString();
         }
 
         private void StartStop_Button_Click(object sender, RoutedEventArgs e)

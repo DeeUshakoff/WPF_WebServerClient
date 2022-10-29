@@ -1,0 +1,353 @@
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.background_img {
+  background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181a21 100%) fixed no-repeat,
+    url(https://store.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg) center top no-repeat,
+    #181a21;
+  padding: 0px 8px;
+  width: 100%;
+}
+
+.big_login_container {
+  padding-top: 90px;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.medium_login_container {
+  position: relative;
+  display: block;
+}
+
+.login_container {
+  gap: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #E9E9E9;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+}
+
+.login_dialog_form_container {
+  background-color: #181a21;
+  border-radius: 4px;
+  padding: 24px 32px;
+  flex: 1;
+  min-width: 636px;
+}
+
+.login_dialog_inside_container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.login_dialog_form {
+  flex: 1;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.login_dialog_form_textfield {
+  display: grid;
+  grid-template-areas:
+    "label hint"
+    "input input";
+  grid-template-columns: 1fr min-content;
+  gap: 2px;
+}
+
+.login_dialog_form_input {
+  border-radius: 2px;
+  color: #fff;
+  padding: 10px;
+  background-color: #32353c;
+  outline: none;
+  font-size: 15px;
+  grid-area: input;
+  border: 1px solid #32353c;
+}
+
+.login_dialog_form_title {
+  color: #1999ff;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  user-select: none;
+}
+
+.login_dialog_form_subtitle {
+  font-size: 12px;
+  color: #afafaf;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  user-select: none;
+}
+
+.login_dialog_form_checkbox_field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.login_dialog_form_checkbox{
+  width: 14px;
+  height: 14px;
+  padding: 3px;
+  border-radius: 2px;
+  background-color: #32353c;
+  cursor: pointer;
+}
+.login_dialog_form_checkbox_check{
+  width: 100%;
+  height: 100%;
+}
+.SVG_icon_button{
+  fill: #fff;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  max-width: 320px;
+  max-height: 320px;
+  
+}
+
+.login_dialog_form_checkbox_label{
+  color: #afafaf;
+  font-size: 12px;
+  user-select: none;
+  padding-left: 6px;
+}
+
+.control {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+  .control input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+  }
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #32353c;
+  border: 0px solid #000000;
+  border-radius: 2px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #393c44;
+}
+
+.control input:checked ~ .control_indicator {
+  background: #32353c;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #32353c;
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-checkbox .control_indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+  border-color: #7b7b7b;
+}
+
+.button_signin_container{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.button_signin{
+  position: relative;
+  background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  padding: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: center;
+  letter-spacing: .03em;
+  cursor: pointer;
+  width: 270px;
+}
+.button_signin:hover{
+  background: linear-gradient(90deg, #4ed3ff 0%, #2D73FF 100%);
+}
+.newlogindialog_FormError{
+  color: #c15755;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+.help_login{
+  color: #afafaf;
+  text-align: center;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login_dialog_beta_container{
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+}
+.newlogindialog_title{
+  color: #1999ff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 6px 0px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+.newlogindialog_QR_container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 0px;
+}
+.newlogindialog_PhoneIcon{
+  width: 120px;
+  fill: #afafaf;
+}
+.newlogindialog_BetaSubtitle{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #afafaf;
+  margin: 8px;
+}
+.newlogindialog_JoinBetaButton{
+  background-color: rgba(255,255,255,.1);
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.newlogindialog_ShowQRLink{
+  text-align: center;
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #afafaf;
+    padding: 12px 0px;
+    cursor: pointer;
+}
+.login_dialog_beta_section{
+  flex: 0;
+  display: grid;
+  gap: 4px;
+  margin-left: 24px;
+}
+
+.under{
+  font-size:14px;
+font-family:Arial;
+  display: flex;
+  flex-direction: row;
+  padding-top: 48px;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  justify-content: center;
+  background-color: #181A21;
+}
+.img_under{
+  width: 320px;
+}
+.under_row_item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+}
+.under_subtext{
+  font-size: 14px;
+  color: #b8b6b4;
+}
+.under_about_link{
+  max-width: 60%;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+.under_button_ctn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.under_button_joinSteam{
+  font-size:14px;
+font-family:Arial;
+width:140px;
+height:50px;
+border-width:2px;
+color:white;
+border-color:#dcdcdc;
+font-weight:bold;
+border-radius: 2px;
+/* border-top-left-radius:2px;
+border-top-right-radius:2px;
+border-bottom-left-radius:2px;
+border-bottom-right-radius:2px; */
+background-color:transparent;
+}
+
+  

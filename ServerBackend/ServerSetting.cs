@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WPF_WebServerClient.ServerBackend
@@ -29,8 +30,8 @@ namespace WPF_WebServerClient.ServerBackend
         }
         public readonly string DefaultLink = "http://localhost:";
 
-        public string Path { get; set; } = @"./Homework/2nd course/hw_3 http server v2/site";
-        public readonly string DefaultPath  = @"./Homework/2nd course/hw_3 http server v2/site";
+        public string Path { get; set; } = Directory.GetCurrentDirectory() + @"\Site";
+        public readonly string DefaultPath  = Directory.GetCurrentDirectory() + @"\Site";
 
         public event EventHandler SettingsChanged;
         

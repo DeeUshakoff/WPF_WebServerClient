@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -29,7 +30,7 @@ namespace WPF_WebServerClient
         DispatcherTimer dt = new DispatcherTimer();
         Stopwatch sw = new Stopwatch();
         string currentTime = string.Empty;
-
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -79,6 +80,17 @@ namespace WPF_WebServerClient
             ControlPage.PrintToDebug("Server " + ServerStatus_Label.Text);
         }
 
+        public static void DisplayText(string text)
+        {
+           
+                string caption = "Stop server";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Question;
+                MessageBoxResult result;
+
+                result = System.Windows.MessageBox.Show(text, caption, button, icon, MessageBoxResult.OK);
+              
+        }
         
     }
 }
