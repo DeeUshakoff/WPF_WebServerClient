@@ -26,7 +26,7 @@
 
                     <StackPanel MinWidth="300" Margin="0,5,0,0"  Orientation="Horizontal">
                         <TextBlock Text="Address: " VerticalAlignment="Center"/>
-                        <TextBox x:Name="Address_TextBox" MinWidth="100" VerticalAlignment="Bottom" >Address</TextBox>
+                        <TextBox x:Name="Link_TextBox" MinWidth="100" VerticalAlignment="Bottom" >Address</TextBox>
                         <Button Margin="5,0,0,0">Reset</Button>
                     </StackPanel>
 

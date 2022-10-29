@@ -16,19 +16,30 @@ namespace WPF_WebServerClient.ServerBackend
         private readonly HttpListener _httpListener;
 
         public event EventHandler ServerStatusChanged;
+        public event EventHandler PrefixAdded;
+
         public HttpListenerPrefixCollection Prefixes => _httpListener.Prefixes;
         public ServerSetting ServerSetting => _serverSetting;
         public HttpServer()
         {
             _httpListener = new HttpListener();
-            _httpListener.Prefixes.Add($"http://localhost:" + _serverSetting.Port + "/");
+            
+            
+        }
+        public void Initialize()
+        {
+            DisplayPrefix(_serverSetting.Link, _serverSetting.Port);
+        }
+        public void DisplayPrefix(string link, uint port)
+        {
+            _httpListener.Prefixes.Add(link + _serverSetting.Port + "/");
+            PrefixAdded?.Invoke(link + _serverSetting.Port + "/", new EventArgs());
         }
 
         public void Start()
         {
             if (Status == ServerStatus.Start)
             {
-                
                 return;
             }
 

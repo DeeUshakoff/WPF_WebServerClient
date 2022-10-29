@@ -22,7 +22,7 @@ namespace WPF_WebServerClient.Pages
     /// </summary>
     public partial class ControlPage : Page
     {
-        private HttpServer server;
+        private readonly HttpServer server;
         public static ListBox OutputList;
         public ControlPage()
         {
@@ -30,13 +30,14 @@ namespace WPF_WebServerClient.Pages
             server = App.httpServer;
 
             server.ServerStatusChanged += ChangeStartStopButtonContent;
-
+            server.PrefixAdded += AddPrefixToList;
+            server.ServerSetting.SettingsChanged += DisplayLinkPort;
             ControlPage.OutputList = DebugList;
 
-            Port_TextBox.Text = server.ServerSetting.Port.ToString();
+            
 
-            foreach(var el in server.Prefixes)
-                PrefixesList.Items.Add(el);
+            server.Initialize();
+            server.ServerSetting.Initialize();
         }
 
         private void StartStop_Button_Click(object sender, RoutedEventArgs e)
@@ -108,6 +109,17 @@ namespace WPF_WebServerClient.Pages
             if (string.IsNullOrWhiteSpace(dp.SelectedPath))
                 return;
             SiteDirectory_TextBox.Text = dp.SelectedPath;
+        }
+
+        private void AddPrefixToList(object sender, EventArgs e)
+        {
+            PrefixesList.Items.Add((string)sender);
+        }
+        private void DisplayLinkPort(object sender, EventArgs e)
+        {
+            
+            Link_TextBox.Text = (sender as ServerSetting).Link;
+            Port_TextBox.Text = (sender as ServerSetting).Port.ToString();
         }
     }
 }
