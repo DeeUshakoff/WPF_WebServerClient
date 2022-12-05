@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace WPF_WebServerClient.ServerBackend;
 
-[HttpController("users")]
+[HttpController(nameof(Users))]
 internal class Users
 {
     [HttpGET("")]

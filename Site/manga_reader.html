@@ -1,0 +1,358 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/global_styles.css">
+    <link rel="stylesheet" href="styles/main_styles.css">
+    <link rel="stylesheet" href="styles/user_profile_styles.css">
+    <link rel="stylesheet" href="styles/manga_profile_styles.css">
+    <link rel="stylesheet" href="styles/manga_reader_styles.css">
+
+
+    <title>MangaBoobs.cum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script src="/js/global.js"></script>
+
+    <script>
+        function SetAuthContainerVisible() {
+            document.getElementById('auth_container').style.visibility = "visible"
+        }
+
+        function SetAuthContainerHidden() {
+            document.getElementById('auth_container').style.visibility = "hidden"
+        }
+
+        function SetChapterContainerVisible() {
+            document.getElementById('chapter_container').style.visibility = "visible"
+        }
+        function SetChapterContainerHidden() {
+            document.getElementById('chapter_container').style.visibility = "hidden"
+        }
+
+        function DisplayTopProfileMenu() {
+            var x = document.getElementById('top_profile_menu');
+            if (x.style.visibility == 'hidden') {
+                x.style.visibility = 'visible';
+            } else {
+                x.style.visibility = 'hidden';
+            }
+        }
+
+    </script>
+    <style>
+        .material-symbols-rounded {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+    </style>
+</head>
+<header>
+    <div class="header_content">
+        <div class="horizontal_items">
+            <div class="horizontal_item">
+                <a href="" class="header_navlink">Home</a>
+            </div>
+
+            <div class="horizontal_item">
+                <a href="#" class="header_navlink">Catalog</a>
+            </div>
+            <div class="horizontal_item">
+                <!-- <a href="#" class="header_navlink">Search</a> -->
+                <input type="search" placeholder="Search" name="" class="blurred_input" id="">
+            </div>
+        </div>
+        <div class="horizontal_items">
+            <div class="horizontal_item">
+                <a href=""><img src="images/logo.svg" alt="" height="50"></a>
+                <!-- <p class="header_logo">MANGA</p> -->
+            </div>
+        </div>
+
+        <div class="horizontal_items">
+            <div class="horizontal_item">
+                <a href="" class="header_navlink">Favourite</a>
+            </div>
+            <div class="horizontal_item">
+                <!-- <a class="top_profile_button" onclick="DisplayTopProfileMenu()">dev_profile</a> -->
+                <div class="dropdown">
+                    <button class="top_profile_button">user</button>
+
+                    <div class="dropdown-content">
+                        <div style="width: 280; height: 20;"></div>
+                        <div class="top_profile_content">
+
+                            <button class="sidemenu_button margin_top">Profile</button>
+                            <button class="sidemenu_button margin_top">Wish list</button>
+
+                            <br>
+                            <div class="outlined_button noselect margin_top" onclick="">
+                                Logout
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal_item">
+
+                <button onclick="SetAuthContainerVisible()" class="button_login" id="header_login_button">Login</button>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<body class="main_content">
+    <div class="content_container">
+        <div class="action_list">
+            <button class="top_profile_button">prev</button>
+            <a class="chapter_list_item noselect margin_side" onclick="SetChapterContainerVisible()">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                
+                <div>
+                    .   29.04.2021
+                </div>
+            </a>
+            <a class="chapter_list_item noselect">
+                
+                <div>
+                    1
+                </div>
+            </a>
+            <button class="top_profile_button margin_side">next</button>
+        </div>
+    </div>
+    <div class="chapter_container" id="chapter_container">
+        <div class="outlined_button noselect" onclick="SetChapterContainerHidden()" >
+            close
+        </div>
+        <div class="chapter_list side_padding" scrolling="yes">
+            
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            <a href="error.html" class="chapter_list_item">
+                <div>
+                    1 - 1 - Dog and chainsaw
+                </div>
+                <div>
+                    29.04.2021
+                </div>
+            </a>
+            
+        </div>
+
+        
+    </div>
+
+    <div class="content_container">
+        <img src="https://h2m.rmr.rocks/auto/17/60/03/03.png?t=1670048124&u=0&h=YC-dF3_nSAqoC6S-vjGAlg" alt="">
+    </div>
+
+    <div class="auth_container" id="auth_container">
+        <form class="auth_content_container" id="auth_content_container">
+
+            <label for="" style="color: white; font-size: 40px; line-height: 48px;">Login in</label>
+            <input type="email" placeholder="username or email" name="LoginInput" class="blurred_input" id="">
+            <input type="password" placeholder="password" name="" class="blurred_input" id="">
+
+
+
+            <a href="" class="button_auth">Login</a>
+
+
+            <div class="auth_bottom_container">
+
+                <div class="outlined_button noselect" onclick="SetAuthContainerHidden()">
+                    close
+                </div>
+                <div style="width: 20px;"></div>
+                <a href="" class="outlined_button">sign in</a>
+
+            </div>
+            <label style="color: red;" id="auth_error_label"></label>
+        </form>
+    </div>
+
+</body>
+
+</html>

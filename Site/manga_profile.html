@@ -22,9 +22,6 @@
     <script>
         function SetAuthContainerVisible() {
             document.getElementById('auth_container').style.visibility = "visible"
-
-
-
         }
 
         function SetAuthContainerHidden() {
@@ -113,7 +110,7 @@
     <div class="manga_profile_container">
         <!-- <button class="button_purple"></button> -->
         <div>
-            <img src="https://mangalib.me/uploads/cover/chainsaw-man/cover/mUIlgi4AJypL_250x350.jpg"
+            <img src="{{cover_image_link}}"
                 class="daytop_cover" alt="">
             <div class="horizontal_items" style="padding-top: 10px; justify-content: space-between;">
                 <div class="horizontal_item">
@@ -128,7 +125,7 @@
                             <div style="width: 280; height: 20;"></div>
                             <div class="top_profile_content">
 
-                                <button class="sidemenu_button margin_top">Read later</button>
+                                <button  class="sidemenu_button margin_top">Read later</button>
                                 <button class="sidemenu_button margin_top">Already Read</button>
                                 <button class="sidemenu_button margin_top">Reading now</button>
 
@@ -202,7 +199,7 @@
         </div>
         <div class="daytop_info_container">
             <div class="manga_name_rating">
-                <a href="" class="title_name">chainsaw man</a>
+                <a href="" class="title_name">{{manga_name}}</a>
 
                 <div class="rating">
                     <div class="rating_stars" id="rating">
@@ -233,19 +230,7 @@
                 <a href="" class="manga_tag">vulgar</a>
                 <a href="" class="manga_tag">demons</a>
             </div>
-            <div class="manga_profile_description" id="manga_profile_description">
-                “I have always dreamed of living an ordinary life: sleeping in a warm bed, eating jam on toast in the
-                morning, going on dates with my girlfriend and smiling every day. But everything changed with the death
-                of
-                his father - now, Pochita, it's time to kill! - with these words, Denji, along with his chainsaw dog
-                Pochita, goes to another contract, because they are demon hunters. Every day they kill for the money
-                that
-                Denji must pay to one yakuza, otherwise the debt of the deceased father will have to pay with his own
-                life.
-                But what awaits Denji when he returns all the debt: will he live a normal life or continue to save the
-                world
-                from demons? Or maybe fate has its own plans for the fate of the hero?
-            </div>
+            <div class="manga_profile_description" id="manga_profile_description">{{description}}</div>
 
             <!-- <div class="tab_view">
                 <label  class="tab_link" id="one-tablink" for="one">Preview</label >

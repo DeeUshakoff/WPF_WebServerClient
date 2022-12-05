@@ -1,0 +1,30 @@
+.chapter_container{
+    opacity: 1;
+    visibility: hidden;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: rgba(137, 137, 137, 0.7);
+    backdrop-filter: blur(10px);
+}
+.action_list{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.side_padding{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.margin_side{
+    margin-left: 15px;
+    margin-right: 15px;
+}

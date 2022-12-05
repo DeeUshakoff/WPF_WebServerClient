@@ -1,0 +1,188 @@
+.user_profile_container{
+    visibility: visible;
+    /* align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center; */
+
+    display: flex; 
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: rgba(137, 137, 137, 0.7);
+    backdrop-filter: blur(10px);
+}
+.user_profile_content{
+    display: flex;
+
+}
+.user_profile_sidemenu{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    margin-left: 50px;
+    width: 200px;
+}
+.sidemenu_button{
+    /* border: 1px solid #D9D9D9; */
+    border: none;
+    border-color: transparent;
+    height: 50px;
+    background: #eeeeee;
+    
+    display: block;
+    width: 250;
+    border-radius: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #757575; 
+}
+/* .sidemenu_button:focus{
+    border: none;
+    color: white;
+    background: rgba(143, 0, 255, 0.7);
+    box-shadow: 0px 4px 15px rgba(143, 0, 255, 0.7);
+} */
+.sidemenu_button:hover{
+    border: none;
+
+    background: white;
+    box-shadow: 0px 4px 10px rgba(62, 62, 62, 0.15);
+}
+
+.top_profile_menu{
+    display: flex;
+    position: inherit;
+    margin-right: 150;
+    padding-top: 5px;
+    justify-content: flex-end;
+    
+}
+/* .top_profile_content{
+    display: flex;
+    padding: 15px;
+    background: rgba(62, 62, 62, 0.3);
+    width: 250;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(62, 62, 62, 0.3);
+    z-index: 1;
+} */
+.top_profile_content{
+    position: absolute;
+   
+   
+    
+    display: flex;
+    padding: 15px;
+    background: rgba(62, 62, 62, 0.3);
+    width: 250;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(62, 62, 62, 0.3);
+    z-index: 2;
+}
+.top_profile_button{
+    transition: 0.5s;
+    display: flex;
+    background: rgba(143, 0, 255, 0.7);
+    border-radius: 15px;
+    border-width: 0;
+    height: 50px;
+    min-width: 100px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    
+}
+.top_profile_button:hover{
+    background: rgba(143, 0, 255, 1);
+    transition: 0.5s;
+    
+    box-shadow: 0px 4px 15px rgba(143, 0, 255, 0.5);
+}
+
+
+
+/* Кнопка выпадающего списка */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Выпадающее содержимое (скрыто по умолчанию) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: white; */
+    min-width: 160px;
+    right: 0;
+    top: 48;
+    z-index: 1;
+
+    /* position: absolute;
+
+    right: 0;
+    
+    display: none;
+    padding: 15px;
+    background: rgba(62, 62, 62, 0.3);
+    width: 250;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(62, 62, 62, 0.3);
+    z-index: 1; */
+  }
+  
+  /* Ссылки внутри выпадающего списка */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content-left{
+    right: auto;
+  }
+  /* Изменение цвета выпадающих ссылок при наведении курсора */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Показать выпадающее меню при наведении курсора */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Изменение цвета фона кнопки раскрывающегося списка при отображении содержимого раскрывающегося списка */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}

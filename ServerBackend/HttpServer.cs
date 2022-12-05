@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scriban;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,8 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using WPF_WebServerClient.DataBases;
 using WPF_WebServerClient.Pages;
 
 namespace WPF_WebServerClient.ServerBackend
@@ -45,6 +48,8 @@ namespace WPF_WebServerClient.ServerBackend
                 return;
             }
 
+            //database initialization
+
             _httpListener.Start();
             
             Status = ServerStatus.Start;
@@ -74,7 +79,8 @@ namespace WPF_WebServerClient.ServerBackend
                 {
                     var _httpContext = await _httpListener.GetContextAsync();
 
-                    if (MethodHandler(_httpContext)) return;
+                    MethodHandler(_httpContext);
+                    //if (MethodHandler(_httpContext)) return;
 
                     StaticFiles(_httpContext.Request, _httpContext.Response);
                 }
@@ -83,7 +89,7 @@ namespace WPF_WebServerClient.ServerBackend
         }
         private void StaticFiles(HttpListenerRequest request, HttpListenerResponse response)
         {
-            byte[] buffer;
+            byte[] buffer = Array.Empty<byte>();
             if (Directory.Exists(_serverSetting.Path))
             {
                 buffer = getFile(request.RawUrl.Replace("%20", " "));
@@ -91,22 +97,46 @@ namespace WPF_WebServerClient.ServerBackend
 
                 if (buffer == null)
                 {
-                    response.Headers.Set("Content-Type", "text/plain");
+                    // response.Headers.Set("Content-Type", "text/plain");
+                    
                     response.StatusCode = (int)HttpStatusCode.NotFound;
-                    string err = "not found - 404";
-                    buffer = Encoding.UTF8.GetBytes(err);
+                    buffer = CreateErrorBuffer(response.StatusCode, response.StatusDescription);
+                   
+
+
+
                 }
 
             }
             else
             {
-                string err = $"Directory '{_serverSetting.Path}' not found";
-                buffer = Encoding.UTF8.GetBytes(err);
+                response.StatusCode = (int)HttpStatusCode.Moved;
+                buffer = CreateErrorBuffer(response.StatusCode, $"Directory '{_serverSetting.Path}' not found");
+                //string err = ;
+                //buffer = Encoding.UTF8.GetBytes(err);
             }
             Stream output = response.OutputStream;
             output.Write(buffer, 0, buffer.Length);
             output.Close();
         }
+
+        public byte[] CreateErrorBuffer(int errorCode, string errorText)
+        {
+            byte[] buffer = Array.Empty<byte>();
+            var filePath = _serverSetting.Path; // + rawUrl.Replace('/','\\');
+            
+            filePath += "\\error.html";
+            
+            if(!File.Exists(filePath)) { return Encoding.UTF8.GetBytes("directory or page not found"); }
+
+            string page = File.ReadAllText(filePath);
+            page = page.Replace("ERROR CODE", errorCode.ToString()).Replace("error explanation", errorText);
+
+            buffer = Encoding.UTF8.GetBytes(page);
+           
+            return buffer;
+        }
+        
         private void ListenerCallBack(IAsyncResult result)
         {
             if (_httpListener.IsListening)
@@ -121,16 +151,15 @@ namespace WPF_WebServerClient.ServerBackend
 
                     if (buffer != null)
                     {
-                        response.Headers.Set("Content-Type", "text/plain");
+                        // response.Headers.Set("Content-Type", "text/plain");
                         response.StatusCode = (int)HttpStatusCode.NotFound;
-                        string err = "404 - not found";
-                        buffer = Encoding.UTF8.GetBytes(err);
+                        buffer = CreateErrorBuffer(response.StatusCode, response.StatusDescription);
                     }
                 }
                 else
                 {
-                    string err = $"Directory " + _serverSetting.Path + " not found";
-                    buffer = Encoding.UTF8.GetBytes(err);
+                    response.StatusCode = (int)HttpStatusCode.Moved;
+                    buffer = CreateErrorBuffer(response.StatusCode, $"Directory '{_serverSetting.Path}' not found");
                 }
                 Stream output = response.OutputStream;
                 output.Write(buffer, 0, buffer.Length);
@@ -173,9 +202,12 @@ namespace WPF_WebServerClient.ServerBackend
 
             var ret = method.Invoke(Activator.CreateInstance(controller), queryParams);
 
-            response.ContentType = "Application/json";
+            //response.ContentType = "Application/json";
 
-            byte[] buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(ret));
+            //byte[] buffer = Encoding.ASCII.GetBytes(JsonSerializer.Serialize(ret));
+            //response.ContentLength64 = buffer.Length;
+
+            byte[] buffer = (byte[])ret;
             response.ContentLength64 = buffer.Length;
 
             Stream output = response.OutputStream;
