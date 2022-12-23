@@ -59,14 +59,19 @@ namespace WPF_WebServerClient.DataBases
     public class MangaTemplate 
     {
         [HttpGET("")]
-        public byte[] GetRenderBuffer()
+        public byte[] GetRenderBuffer() => Encoding.UTF8.GetBytes(RenderTemplate(new Manga()
         {
-            return Encoding.UTF8.GetBytes(RenderTemplate(new Manga() { Id = 1, Name = "Ssanina", Description="Govno", CoverImageLink= "https://mangalib.me/uploads/cover/chainsaw-man/cover/mUIlgi4AJypL_250x350.jpg", Chapters = new List<Chapter> { new Chapter() { Number = 231 } } }));
-        }
+            Id = 1,
+            Name = "Hello",
+            Description = "This id desc",
+            CoverImageLink = "https://mangalib.me/uploads/cover/chainsaw-man/cover/mUIlgi4AJypL_250x350.jpg",
+            Chapters = new List<Chapter> { new Chapter() { Number = 231 } }
+        })
+        );
         public static string RenderTemplate(Manga manga) 
         {
             var temlpate_path = Directory.GetCurrentDirectory() + @"\Site\manga_profile.html";
-            if (!File.Exists(temlpate_path)) return "govno";
+            if (!File.Exists(temlpate_path)) return "No!";
 
             var page = File.ReadAllText(temlpate_path);
             var template = Template.Parse(page);
